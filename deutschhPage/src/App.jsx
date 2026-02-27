@@ -3,6 +3,7 @@ import Hero from "./Sections/Hero";
 import Navbar from "./components/Navbar";
 import Portfolio from "./Sections/Portifolio";
 import Gallery from "./Sections/Gallery";
+import Services from "./Sections/Services"; 
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <Hero />
     <Portfolio />
     <Gallery />
+    <Services />
   </div>;
 }
 
