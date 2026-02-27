@@ -32,7 +32,7 @@ export default function Portfolio() {
             {/* Lado Esquerdo: Vídeo do Projeto (Agora ocupa 7 das 12 colunas) */}
             <div className="relative lg:col-span-7 bg-zinc-50 flex items-center justify-center p-6 sm:p-10 lg:p-12">
               {/* MUDANÇA 2: Criando uma "moldura" elegante para o vídeo */}
-              <div className="w-full rounded-xl overflow-hidden shadow-2xl border border-zinc-200 bg-white transform border-2 group-hover:scale-[1.02] transition-transform duration-500 ease-in-out">
+              <div className="w-full rounded-xl overflow-hidden shadow-2xl border-2 border-zinc-200 bg-white transform group-hover:scale-[1.02] transition-transform duration-500 ease-in-out">
                 <video
                   autoPlay
                   loop
