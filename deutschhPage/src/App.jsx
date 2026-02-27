@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Portfolio from "./Sections/Portifolio";
 import Gallery from "./Sections/Gallery";
 import Services from "./Sections/Services"; 
+import Contact from "./Sections/Contact";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
     <Portfolio />
     <Gallery />
     <Services />
+    <Contact />
   </div>;
 }
 
