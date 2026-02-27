@@ -3,7 +3,7 @@ import { ArrowRight, Code2, Rocket, Search } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="bg-white text-zinc-900 py-20 lg:py-32">
+    <section className="bg-white text-zinc-900 py-20 lg:py-32 mt-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           
