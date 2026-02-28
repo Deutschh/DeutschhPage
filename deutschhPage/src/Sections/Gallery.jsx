@@ -46,10 +46,15 @@ export default function Gallery() {
         <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
           Um pouco do que já foi construído. Sites desenhados para performance e conversão.
         </p>
+
       </div>
+
 
       <div className="flex flex-col gap-8">
         
+        
+            <p className='text-base text-zinc-700 font-bold mx-auto -mb-8'>Clique em qualque imagem para vê-la em tela cheia</p>
+
         {/* Esteira 1 */}
         {/* Adicionei 'overflow-y-visible' no style para permitir que o card saia da linha */}
         <Marquee gradient={true} gradientColor="white" gradientWidth={100} speed={40} pauseOnHover={true} style={{ overflowY: 'visible' }}>

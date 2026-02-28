@@ -30,7 +30,7 @@ export default function Contact() {
                 
                 {/* Botão Principal: WhatsApp */}
                 <a 
-                  href="https://wa.me/5511999999999?text=Olá%20Guilherme!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." 
+                  href="https://wa.me/5511981479715?text=Olá%20Guilherme!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="group relative flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-emerald-500 text-white font-bold rounded-xl hover:bg-emerald-600 transition-all shadow-[0_10px_20px_rgba(16,185,129,0.3)] hover:shadow-[0_15px_30px_rgba(16,185,129,0.4)] hover:-translate-y-1"
@@ -46,7 +46,7 @@ export default function Contact() {
 
                 {/* Botão Secundário: E-mail */}
                 <a 
-                  href="mailto:seuemail@exemplo.com"
+                  href="gui.d.andrade@gmail.com"
                   className="flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-white text-zinc-700 font-bold rounded-xl border-2 border-zinc-200 hover:border-zinc-900 hover:text-zinc-900 transition-all"
                 >
                   <Mail size={22} />
@@ -105,7 +105,7 @@ export default function Contact() {
                 <a href="#" className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-400 hover:bg-white hover:text-zinc-900 transition-all">
                   <Linkedin size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-400 hover:bg-white hover:text-zinc-900 transition-all">
+                <a href="https://github.com/Deutschh" target='_blank' className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-400 hover:bg-white hover:text-zinc-900 transition-all">
                   <Github size={20} />
                 </a>
               </div>

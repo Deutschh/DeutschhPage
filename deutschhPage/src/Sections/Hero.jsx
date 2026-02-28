@@ -1,9 +1,32 @@
 import React from 'react';
 import { ArrowRight, Code2, Rocket, Search } from 'lucide-react';
 
+ const scrollToSection = (e, href) => {
+    e.preventDefault(); // Impede o pulo brusco padrão do HTML
+
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+
+    if (element) {
+      // Pega a altura da Navbar para não cobrir o título da seção (aprox 100px)
+      const headerOffset = 1;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+      // Executa a animação suave
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+
+    // Se o menu de celular estiver aberto, ele fecha automaticamente após o clique
+    setIsOpen(false);
+  };
+
 export default function Hero() {
   return (
-    <section className="bg-white text-zinc-900 py-20 lg:py-32 mt-4">
+    <section id='hero' className="bg-white text-zinc-900 py-20 lg:py-32 mt-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           
@@ -27,7 +50,8 @@ export default function Hero() {
           {/* Botões de Ação (O contraste principal) */}
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <a 
-              href="#contato" 
+              href="#contato"
+              onClick={(e) => scrollToSection(e, "#contato")}
               className="group flex items-center justify-center gap-2 px-8 py-4 bg-zinc-900 text-white font-semibold rounded-lg hover:bg-zinc-800 transition-all shadow-lg hover:shadow-xl"
             >
               Solicitar Orçamento
@@ -36,6 +60,7 @@ export default function Hero() {
             
             <a 
               href="#portfolio" 
+              onClick={(e) => scrollToSection(e, "#portfolio")}
               className="flex items-center justify-center gap-2 px-8 py-4 bg-white text-zinc-900 font-semibold rounded-lg border-2 border-zinc-200 hover:border-zinc-900 transition-all"
             >
               Ver Projetos
