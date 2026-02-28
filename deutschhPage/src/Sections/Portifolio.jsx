@@ -40,7 +40,7 @@ export default function Portfolio() {
                   playsInline
                   className="w-full h-auto block"
                 >
-                  <source src="../../public/MattiAcaro.mp4" type="video/mp4" />
+                  <source src="/MattiAcaro.mp4" type="video/mp4" />
                   Seu navegador não suporta a tag de vídeo.
                 </video>
               </div>
