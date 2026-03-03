@@ -1,73 +1,73 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   Layers, 
   Smartphone, 
   MousePointerClick, 
   ArrowRight,
-  ArrowLeft,
   CheckCircle2,
   Code2,
   TrendingUp,
   Share2,
-  Zap,     // NOVO
-  Users,   // NOVO
+  Zap,
+  Users,
   Target
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next'; // Hook de tradução
 
 export default function Services() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Dados completos e persuasivos de cada serviço
+  // Array de serviços traduzido dinamicamente
   const services = [
     {
       id: 'web',
-      tabName: 'Desenvolvimento Web',
-      title: 'Engenharia de Software & Landing Pages',
-      description: 'Não construo apenas sites bonitos, desenvolvo máquinas de vendas. Uso tecnologias de ponta para garantir que seu site carregue em milissegundos, ranqueie no Google e converta visitantes em clientes reais pelo WhatsApp.',
+      tabName: t('services.items.web.tabName'),
+      title: t('services.items.web.title'),
+      description: t('services.items.web.description'),
       icon: <Layers size={48} className="text-emerald-400" />,
       bgIcon: <Code2 size={240} className="text-zinc-800/30" />,
       deliverables: [
-        'Landing Pages de Alta Conversão',
-        'Sistemas Full-Stack (React, Node, PHP)',
-        'Integração Dinâmica com WhatsApp',
-        'Otimização Extrema de SEO Técnico'
+        t('services.items.web.del1'),
+        t('services.items.web.del2'),
+        t('services.items.web.del3'),
+        t('services.items.web.del4')
       ],
       techs: ['React', 'Tailwind CSS', 'JavaScript', 'SQL'],
-      badge: { title: 'Velocidade Mínima', text: 'Carregamento em < 1s', icon: <Zap size={18} className="text-emerald-400" /> }
+      badge: { title: t('services.items.web.badgeTitle'), text: t('services.items.web.badgeText'), icon: <Zap size={18} className="text-emerald-400" /> }
     },
     {
       id: 'social',
-      tabName: 'Mídias Digitais',
-      title: 'Posicionamento Premium nas Redes',
-      description: 'O seu Instagram é a sua vitrine. Criamos uma identidade visual magnética e uma estratégia de conteúdo que transmite exatamente a mesma autoridade e profissionalismo que o seu site oficial.',
+      tabName: t('services.items.social.tabName'),
+      title: t('services.items.social.title'),
+      description: t('services.items.social.description'),
       icon: <Smartphone size={48} className="text-blue-400" />,
       bgIcon: <Share2 size={240} className="text-zinc-800/30" />,
       deliverables: [
-        'Criação de Identidade Visual Única',
-        'Design de Posts e Criativos',
-        'Estratégia de Engajamento e Retenção',
-        'Padronização de Perfis (Insta, Face, LinkedIn)'
+        t('services.items.social.del1'),
+        t('services.items.social.del2'),
+        t('services.items.social.del3'),
+        t('services.items.social.del4')
       ],
       techs: ['Design Gráfico', 'Copywriting', 'Branding'],
-      badge: { title: 'Engajamento Real', text: 'Crescimento Orgânico', icon: <Users size={18} className="text-blue-400" /> }
+      badge: { title: t('services.items.social.badgeTitle'), text: t('services.items.social.badgeText'), icon: <Users size={18} className="text-blue-400" /> }
     },
     {
       id: 'ads',
-      tabName: 'Tráfego Pago',
-      title: 'Aceleração de Vendas e Performance',
-      description: 'O melhor site do mundo não vende se ninguém entrar nele. Colocamos a sua empresa na primeira página do Google e no feed das redes sociais exatamente no momento em que seu cliente está pronto para comprar.',
+      tabName: t('services.items.ads.tabName'),
+      title: t('services.items.ads.title'),
+      description: t('services.items.ads.description'),
       icon: <MousePointerClick size={48} className="text-orange-400" />,
       bgIcon: <TrendingUp size={240} className="text-zinc-800/30" />,
       deliverables: [
-        'Gestão de Google Ads (Rede de Pesquisa)',
-        'Campanhas no Meta Ads (Instagram/Facebook)',
-        'Foco Absoluto em ROI e Geração de Leads',
-        'Relatórios Transparentes de Resultados'
+        t('services.items.ads.del1'),
+        t('services.items.ads.del2'),
+        t('services.items.ads.del3'),
+        t('services.items.ads.del4')
       ],
       techs: ['Google Ads', 'Meta Business', 'Analytics'],
-      // ... 
-      badge: { title: 'Objetivo Principal', text: 'Otimização de ROI', icon: <Target size={18} className="text-orange-400" /> }
+      badge: { title: t('services.items.ads.badgeTitle'), text: t('services.items.ads.badgeText'), icon: <Target size={18} className="text-orange-400" /> }
     }
   ];
 
@@ -78,17 +78,12 @@ export default function Services() {
     setTimeout(() => {
       setActiveTab(newIndex);
       setIsAnimating(false);
-    }, 300); // Tempo da animação de saída antes de trocar o conteúdo
+    }, 300);
   };
 
   const nextService = () => {
     const nextIndex = activeTab === services.length - 1 ? 0 : activeTab + 1;
     changeService(nextIndex);
-  };
-
-  const prevService = () => {
-    const prevIndex = activeTab === 0 ? services.length - 1 : activeTab - 1;
-    changeService(prevIndex);
   };
 
   const currentService = services[activeTab];
@@ -106,10 +101,10 @@ export default function Services() {
         {/* Cabeçalho */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Soluções Completas
+            {t('services.header.title')}
           </h2>
           <p className="text-lg text-zinc-400">
-            Muito além do código. Ofereço um ecossistema completo para estruturar, posicionar e escalar o seu negócio na internet.
+            {t('services.header.subtitle')}
           </p>
         </div>
 
@@ -178,12 +173,11 @@ export default function Services() {
               {/* Lado Direito: Visual Abstrato & Botão de Avançar */}
               <div className="relative flex flex-col items-center justify-center h-full min-h-[300px] bg-zinc-950/50 rounded-3xl border border-zinc-800/50 p-8 overflow-hidden group">
                 
-                {/* Ícone gigante no fundo */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-700 ease-out">
                   {currentService.bgIcon}
                 </div>
 
-                {/* ✨ NOVO: Mini-Card Flutuante de Benefício */}
+                {/* Mini-Card Flutuante de Benefício */}
                 <div className="absolute top-6 left-6 md:top-8 md:left-8 bg-zinc-900/60 backdrop-blur-md border border-zinc-700/50 rounded-2xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 shadow-2xl transform group-hover:-translate-y-1 transition-transform duration-500 z-20">
                   <div className="bg-zinc-800/80 p-2 sm:p-2.5 rounded-full shadow-inner border border-zinc-700/50">
                     {currentService.badge.icon}
@@ -198,17 +192,17 @@ export default function Services() {
                   </div>
                 </div>
 
-                {/* Botão de Próxima Solução (O que você pediu!) */}
+                {/* Botão de Próxima Solução */}
                 <div className="relative z-10 mt-auto pt-32">
                   <button 
                     onClick={nextService}
                     className="flex items-center gap-3 px-8 py-4 bg-white text-zinc-900 font-bold rounded-xl hover:bg-zinc-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:scale-105"
                   >
-                    Próxima Solução
+                    {t('services.nextBtn')}
                     <ArrowRight size={20} />
                   </button>
                   <p className="text-center text-zinc-500 text-sm mt-4 font-medium">
-                    Explorar {services[activeTab === services.length - 1 ? 0 : activeTab + 1].tabName}
+                    {t('services.explore')} {services[activeTab === services.length - 1 ? 0 : activeTab + 1].tabName}
                   </p>
                 </div>
 

@@ -6,8 +6,11 @@ import {
   Zap,
   Search,
 } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 export default function Portfolio() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="portfolio"
@@ -17,21 +20,19 @@ export default function Portfolio() {
         {/* Cabeçalho da Seção */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold text-zinc-900 tracking-tight mb-4">
-            Trabalhos Recentes
+            {t('portfolio.title')}
           </h2>
           <p className="text-lg text-zinc-600">
-            Projetos reais desenvolvidos com foco absoluto em performance,
-            design premium e captação de clientes.
+            {t('portfolio.subtitle')}
           </p>
         </div>
 
         {/* Card do Projeto - Case Matti Ácaro */}
         <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-zinc-100 transition-all hover:shadow-2xl group">
-          {/* MUDANÇA 1: Usando grid-cols-12 para controlar melhor os espaços */}
           <div className="grid lg:grid-cols-12">
-            {/* Lado Esquerdo: Vídeo do Projeto (Agora ocupa 7 das 12 colunas) */}
+            
+            {/* Lado Esquerdo: Vídeo do Projeto */}
             <div className="relative lg:col-span-7 bg-zinc-50 flex items-center justify-center p-6 sm:p-10 lg:p-12">
-              {/* MUDANÇA 2: Criando uma "moldura" elegante para o vídeo */}
               <div className="w-full rounded-xl overflow-hidden shadow-2xl border-2 border-zinc-200 bg-white transform group-hover:scale-[1.02] transition-transform duration-500 ease-in-out">
                 <video
                   autoPlay
@@ -41,26 +42,23 @@ export default function Portfolio() {
                   className="w-full h-auto block"
                 >
                   <source src="/MattiAcaro.mp4" type="video/mp4" />
-                  Seu navegador não suporta a tag de vídeo.
+                  {t('portfolio.videoFallback')}
                 </video>
               </div>
             </div>
 
-            {/* Lado Direito: Informações do Case (Agora ocupa 5 das 12 colunas) */}
+            {/* Lado Direito: Informações do Case */}
             <div className="p-8 md:p-10 lg:p-12 lg:col-span-5 flex flex-col justify-center">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 text-xs font-bold text-zinc-600 uppercase tracking-wider mb-6 w-fit">
-                Limpeza Premium & Estética
+                {t('portfolio.project1.badge')}
               </div>
 
               <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-4">
-                Grupo Matti Ácaro
+                {t('portfolio.project1.name')}
               </h3>
 
               <p className="text-zinc-600 mb-8 leading-relaxed">
-                Desenvolvimento de uma Landing Page de alta conversão para
-                serviços de higienização de estofados. O foco do projeto foi
-                transmitir a autoridade da marca e facilitar o agendamento
-                rápido via WhatsApp através de botões interativos.
+                {t('portfolio.project1.description')}
               </p>
 
               {/* Badges de Resultados/Tecnologias */}
@@ -71,10 +69,10 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-zinc-900 text-sm">
-                      Alta Velocidade
+                      {t('portfolio.project1.feat1.title')}
                     </h4>
                     <p className="text-xs text-zinc-500">
-                      Desenvolvido em React/Vite
+                      {t('portfolio.project1.feat1.desc')}
                     </p>
                   </div>
                 </div>
@@ -85,10 +83,10 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-zinc-900 text-sm">
-                      SEO Técnico
+                      {t('portfolio.project1.feat2.title')}
                     </h4>
                     <p className="text-xs text-zinc-500">
-                      Indexado no Google Console
+                      {t('portfolio.project1.feat2.desc')}
                     </p>
                   </div>
                 </div>
@@ -99,9 +97,11 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-zinc-900 text-sm">
-                      Foco em Conversão
+                      {t('portfolio.project1.feat3.title')}
                     </h4>
-                    <p className="text-xs text-zinc-500">CTAs estratégicos</p>
+                    <p className="text-xs text-zinc-500">
+                      {t('portfolio.project1.feat3.desc')}
+                    </p>
                   </div>
                 </div>
 
@@ -111,10 +111,10 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-zinc-900 text-sm">
-                      Design Responsivo
+                      {t('portfolio.project1.feat4.title')}
                     </h4>
                     <p className="text-xs text-zinc-500">
-                      Perfeito em celulares
+                      {t('portfolio.project1.feat4.desc')}
                     </p>
                   </div>
                 </div>
@@ -127,7 +127,7 @@ export default function Portfolio() {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-2 px-6 py-3 bg-zinc-900 text-white font-semibold rounded-lg hover:bg-zinc-800 transition-all w-fit"
               >
-                Visitar Site ao Vivo
+                {t('portfolio.project1.button')}
                 <ExternalLink
                   size={18}
                   className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
